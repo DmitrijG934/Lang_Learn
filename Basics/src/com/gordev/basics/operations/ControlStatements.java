@@ -16,6 +16,14 @@ public class ControlStatements {
     }
 
     public static void main(String[] args) throws java.io.IOException {
-
+        outer :
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+            for (int j = 0; j < 10; j++) {
+                if(j > i) continue outer;
+                System.out.print(i * j);
+            }
+            System.out.println();
+        }
     }
 }
