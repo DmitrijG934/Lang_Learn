@@ -1,5 +1,6 @@
 package com.gordev.basics.classes;
 
+
 public class Box {
 
     private int id;
@@ -16,11 +17,11 @@ public class Box {
         this(0.0, 0.0, 0.0);
     }
 
-    public Box(double width, double height) {
+    Box(double width, double height) {
         this(width, height, 0.0);
     }
 
-    public Box(double width, double height, double depth) {
+    Box(double width, double height, double depth) {
         count++;
         id = count;
         this.width = width;
@@ -28,7 +29,10 @@ public class Box {
         this.depth = depth;
     }
 
-
+    double volume() {
+        System.out.println("Volume of Box # " + id + ":");
+        return width * height * depth;
+    }
 
     @Override
     public String toString() {
@@ -36,13 +40,14 @@ public class Box {
                 id, this.width, this.height, this.depth);
     }
 
+    protected void finalize() {
+        System.out.println("Box with id " + id + " was deleted");
+    }
+
     public static void main(String[] args) {
-        Box box = new Box();
-        Box box1 = new Box(10.0, 6.3);
-        Box box2 = new Box(100.0, 67.8, 30.42);
-        System.out.println(box);
-        System.out.println(box1);
-        System.out.println(box2);
+        Box box = new Box(10, 20, 15);
+        box.finalize();
+        box.volume();
     }
 
 }
