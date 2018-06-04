@@ -19,7 +19,7 @@ class Stack {
             stack[++topOfStack] = val;
     }
 
-    private int pull() {
+    private int pop() {
         if(topOfStack < 0) {
             System.out.println("Stack isn\'t overflowed!");
             return 0;
@@ -38,9 +38,9 @@ class Stack {
         for (int i = 10; i < 20; i++) stack1.push(i);
 
         System.out.println("Stack 1");
-        for (int i = 0; i < 10; i++) System.out.println(stack.pull());
+        for (int i = 0; i < 10; i++) System.out.println(stack.pop());
         System.out.println("Stack 2");
-        for (int i = 0; i < 10; i++) System.out.println(stack1.pull());
+        for (int i = 0; i < 10; i++) System.out.println(stack1.pop());
 
     }
 
